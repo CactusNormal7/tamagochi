@@ -19,3 +19,4 @@
 - Jeux
   - clicker : cliquer sur l'hexagone pour gagner 1 d'argent.
   - Pile ou face : une chance sur deux de gagner, gagne 10 d'argent si victoire et 2 de bonheur, perd 10 d'argent si défaite, si l'argent passe en négatif la valeur négative est multipliée par 2.
+- parfois l'appli peux crash au premier lancement, il faut relancer.
