@@ -1,7 +1,7 @@
 # tamagochi
 
 
-## conecept:
+## conecpt:
 
 épuré
 
