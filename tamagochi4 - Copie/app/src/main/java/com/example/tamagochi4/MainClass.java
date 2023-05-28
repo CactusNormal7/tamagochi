@@ -53,6 +53,9 @@ public class MainClass extends AppCompatActivity{
         FirebaseDatabase database = FirebaseDatabase.getInstance("https://tamagochi4-f4ebf-default-rtdb.europe-west1.firebasedatabase.app");
         DatabaseReference myRef = database.getReference("users");
 
+
+
+        //------------ajoute l'appareil dans la base de donnée si il n'est pas deja présent
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -73,6 +76,9 @@ public class MainClass extends AppCompatActivity{
         });
         //-------onDataChangeEnd-------------
 
+
+
+        //------------------clicker------------------
         tamagoimgbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,7 +88,7 @@ public class MainClass extends AppCompatActivity{
             }
         });
 
-
+        //------------------bouton feed------------------
         feedbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,6 +123,8 @@ public class MainClass extends AppCompatActivity{
 
         final Handler handler = new Handler();
 
+
+        //------------------update de la faim et du bonheur toute les 50 secondes---------
         handler.postDelayed(new Runnable() {
             public void run() {
                 delay = 50000;
@@ -132,6 +140,8 @@ public class MainClass extends AppCompatActivity{
                     if (happiness <= 0) {
                         Toast.makeText(getApplicationContext(), "tamagochi is dead from suicide", Toast.LENGTH_SHORT).show();
                     }
+
+                    //------------------game over------------------
                     setContentView(R.layout.gameover);
                     Button restartbutton = findViewById(R.id.restartbutton);
                     restartbutton.setOnClickListener(new View.OnClickListener() {
@@ -156,6 +166,8 @@ public class MainClass extends AppCompatActivity{
         }, delay);
         //-----------------------------------------------------------
 
+
+        //------------------changement de view pile ou face------------------
         buttontoflip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -177,7 +189,7 @@ public class MainClass extends AppCompatActivity{
                     }
                 });
 
-
+                //------------------jeux pile ou face------------------
                 flipbutton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
