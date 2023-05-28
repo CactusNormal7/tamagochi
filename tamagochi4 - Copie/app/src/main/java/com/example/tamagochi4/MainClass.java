@@ -32,7 +32,7 @@ public class MainClass extends AppCompatActivity{
     public Integer hunger;
     public Integer happiness;
     public Integer money;
-    int delay = 5000; //
+    int delay = 3000; //
 
 
     protected void onCreate(Bundle saveInstanceState) {
@@ -53,8 +53,6 @@ public class MainClass extends AppCompatActivity{
         FirebaseDatabase database = FirebaseDatabase.getInstance("https://tamagochi4-f4ebf-default-rtdb.europe-west1.firebasedatabase.app");
         DatabaseReference myRef = database.getReference("users");
 
-
-
         //------------ajoute l'appareil dans la base de donnée si il n'est pas deja présent
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -63,6 +61,15 @@ public class MainClass extends AppCompatActivity{
                     myRef.child(tmdevice).child("hunger").setValue(100);
                     myRef.child(tmdevice).child("happiness").setValue(100);
                     myRef.child(tmdevice).child("money").setValue(0);
+                }
+                if (!snapshot.child(tmdevice).hasChild("hunger")) {
+                    myRef.child(tmdevice).child("hunger").setValue(100);
+                }
+                if (!snapshot.child(tmdevice).hasChild("happiness")) {
+                    myRef.child(tmdevice).child("happiness").setValue(100);
+                }
+                if (!snapshot.child(tmdevice).hasChild("money")) {
+                    myRef.child(tmdevice).child("money").setValue(100);
                 }
                 hunger = snapshot.child(tmdevice).child("hunger").getValue(Integer.class);
                 happiness = snapshot.child(tmdevice).child("happiness").getValue(Integer.class);
