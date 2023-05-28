@@ -1,1 +1,13 @@
 # tamagochi
+
+
+## conecept:
+
+épuré
+
+
+## explications:
+
+-
+-
+-
