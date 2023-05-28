@@ -1,7 +1,7 @@
 # tamagochi
 
 
-## conecpt:
+## concept:
 
 épuré
 
